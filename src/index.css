@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-aiesec-blue: #037ef3;
+  --color-aiesec-dark: #0a0a0a;
+  --color-aiesec-light: #f3f4f6;
+  --color-aiesec-mid: #59a5f5;
+  --color-aiesec-soft: #e0f2ff;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@utility bg-gradient-brand {
+  @apply bg-linear-to-r from-aiesec-blue to-aiesec-mid;
+}
+
+@utility text-gradient-brand {
+  @apply bg-linear-to-r from-aiesec-blue to-aiesec-mid bg-clip-text text-transparent;
+}
+
+@utility card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
