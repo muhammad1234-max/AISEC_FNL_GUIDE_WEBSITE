@@ -37,47 +37,50 @@ const Governance = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
-            {/* EFB Section */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300"
-            >
-              <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                <Users className="w-40 h-40" />
+          {/* EFB Section */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-800 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+              <Users className="w-40 h-40 text-white" />
+            </div>
+            <div className="flex items-center space-x-4 mb-8 relative z-10">
+              <div className="p-4 bg-blue-500 rounded-2xl text-white shadow-lg">
+                <Users className="w-8 h-8" />
               </div>
-              <div className="flex items-center space-x-4 mb-8 relative z-10">
-                <div className="p-4 bg-blue-500 rounded-2xl text-white shadow-lg">
-                  <Users className="w-8 h-8" />
+              <div>
+                <h2 className="text-2xl font-bold text-white">Entity Finance Board</h2>
+                <span className="text-blue-300 font-bold tracking-wider text-sm">EFB</span>
+              </div>
+            </div>
+
+            <p className="text-gray-300 mb-8 text-lg leading-relaxed relative z-10">
+              The financial decision-making body within an AIESEC entity. It oversees health, budgeting, and compliance.
+            </p>
+
+            <div className="space-y-3 relative z-10">
+              {[
+                'Budget Approval & Ratification',
+                'Financial Oversight (Spending, Cash flow)',
+                'Policy Compliance (Compendium, GAS)',
+                'Debt & Reserve Management',
+                'Strategic Decision-Making'
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors border border-white/10"
+                >
+                  <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 shrink-0" />
+                  <span className="text-gray-200 font-medium">{item}</span>
                 </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900">Entity Finance Board</h2>
-                  <span className="text-blue-500 font-bold tracking-wider text-sm">EFB</span>
-                </div>
-              </div>
+              ))}
+            </div>
+          </motion.div>
 
-              <p className="text-gray-600 mb-8 text-lg leading-relaxed relative z-10">
-                The financial decision-making body within an AIESEC entity. It oversees health, budgeting, and compliance.
-              </p>
-
-              <div className="space-y-3 relative z-10">
-                {[
-                  'Budget Approval & Ratification',
-                  'Financial Oversight (Spending, Cash flow)',
-                  'Policy Compliance (Compendium, GAS)',
-                  'Debt & Reserve Management',
-                  'Strategic Decision-Making'
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center p-3 rounded-xl bg-gray-50 hover:bg-blue-50 transition-colors">
-                    <CheckSquare className="w-5 h-5 text-blue-500 mr-3 shrink-0" />
-                    <span className="text-gray-700 font-medium">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* GFB Section */}
+          {/* GFB Section */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}

@@ -7,6 +7,8 @@ import Operations from './pages/Operations';
 import Governance from './pages/Governance';
 import Tools from './pages/Tools';
 import Glossary from './pages/Glossary';
+import Gallery from './pages/Gallery';
+import People from './pages/People';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <Route path="/governance" element={<Governance />} />
       <Route path="/tools" element={<Tools />} />
       <Route path="/glossary" element={<Glossary />} />
+      <Route path="/gallery" element={<Gallery />} />
+      <Route path="/people" element={<People />} />
     </Routes>
   );
 }

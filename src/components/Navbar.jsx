@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, BookOpen, Shield, BarChart, Users, FileText, Globe } from 'lucide-react';
+import { Menu, X, BookOpen, Shield, BarChart, Users, FileText, Globe, Image, UserCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import logo from '../assets/Blue-Logo.png';
@@ -12,10 +12,12 @@ const Navbar = () => {
   const navItems = [
     { name: 'Fundamentals', path: '/fundamentals', icon: BookOpen },
     { name: 'Compendium', path: '/compendium', icon: FileText },
-    { name: 'Operations', path: '/operations', icon: BarChart },
-    { name: 'Governance', path: '/governance', icon: Shield },
+    { name: 'Standards', path: '/operations', icon: BarChart },
+    { name: 'Audits', path: '/governance', icon: Shield },
     { name: 'Tools', path: '/tools', icon: Globe },
     { name: 'Glossary', path: '/glossary', icon: Users },
+    { name: 'Gallery', path: '/gallery', icon: Image },
+    { name: 'People', path: '/people', icon: UserCircle2 },
   ];
 
   const isActive = (path) => location.pathname === path;

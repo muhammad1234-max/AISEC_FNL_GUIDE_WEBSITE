@@ -1,25 +1,28 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import { motion } from 'framer-motion';
-import { ArrowRight, PieChart, ShieldCheck, Book, TrendingUp } from 'lucide-react';
+import { ArrowRight, PieChart, ShieldCheck, Book, TrendingUp, BarChart2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative bg-gradient-brand overflow-hidden min-h-[600px] flex items-center">
-        {/* Animated Background Shapes */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-1/2 -right-1/2 w-[1000px] h-[1000px] rounded-[40%] bg-white/10 blur-3xl"
-        />
-        <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-1/2 -left-1/2 w-[800px] h-[800px] rounded-[45%] bg-blue-400/20 blur-3xl"
-        />
+      <section className="relative overflow-hidden min-h-[600px] flex items-center bg-gray-900">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <motion.img
+            src="/bg1.jpg"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5 }}
+            className="absolute inset-0 w-full h-full object-cover"
+            alt="Hero Background"
+          />
+          {/* Overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-black/40 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
@@ -120,22 +123,29 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: 'National Compendium', path: '/compendium', color: 'from-blue-600 to-blue-400', subtitle: 'Rules & Procedures' },
-              { title: 'Operational Standards', path: '/operations', color: 'from-purple-600 to-purple-400', subtitle: 'Reporting & Audits' },
-              { title: 'Governance & Legal', path: '/governance', color: 'from-teal-600 to-teal-400', subtitle: 'EFB, GFB & Frameworks' },
+              { title: 'National Compendium', path: '/compendium', color: 'from-blue-600 to-blue-400', subtitle: 'Rules & Procedures', icon: Book },
+              { title: 'Operational Standards', path: '/operations', color: 'from-purple-600 to-purple-400', subtitle: 'Reporting & Audits', icon: BarChart2 },
+              { title: 'Governance & Legal', path: '/governance', color: 'from-teal-600 to-teal-400', subtitle: 'EFB, GFB & Frameworks', icon: ShieldCheck },
             ].map((item, index) => (
               <Link key={index} to={item.path} className="group relative rounded-3xl overflow-hidden shadow-lg aspect-[4/3] card-hover">
                 <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-90 group-hover:opacity-100 transition-opacity`}></div>
 
+                {/* Icon Background */}
+                <div className="absolute -bottom-8 -right-8 opacity-20 group-hover:opacity-30 transition-all duration-500 transform rotate-12 group-hover:scale-110 group-hover:rotate-6">
+                  <item.icon className="w-48 h-48 text-white" strokeWidth={1} />
+                </div>
+
                 {/* Abstract Pattern Overlay */}
                 <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
 
-                <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                  <span className="text-white/80 font-medium mb-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                    {item.subtitle}
-                  </span>
-                  <h3 className="text-white text-3xl font-bold">{item.title}</h3>
-                  <div className="w-12 h-1 bg-white/50 mt-4 rounded-full group-hover:w-full transition-all duration-500"></div>
+                <div className="absolute inset-0 p-8 flex flex-col justify-end relative z-10">
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-3xl font-bold text-white mb-2">{item.title}</h3>
+                    <p className="text-blue-50 font-medium mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">{item.subtitle}</p>
+                    <div className="inline-flex items-center text-white font-semibold group-hover:underline decoration-2 underline-offset-4">
+                      Explore Section <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
                 </div>
               </Link>
             ))}
