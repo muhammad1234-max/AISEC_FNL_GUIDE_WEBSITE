@@ -8,7 +8,7 @@ const lcData = [
     id: 'faisalabad',
     name: 'LC Faisalabad',
     folder: 'Bilal - FSD',
-    images: ['YSF + EB + Sem 2.jpeg', 'Sem 2 .jpeg']
+    images: ['YSF_EB_Sem_2.jpeg', 'Sem_2.jpeg']
   },
   {
     id: 'lahore',
@@ -121,8 +121,8 @@ const Gallery = () => {
                     <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 relative flex items-center justify-center overflow-hidden">
                       {lc.images.length > 0 ? (
                         <>
-                          <img 
-                            src={getImageUrl(lc.folder, lc.images[0])} 
+                          <img
+                            src={getImageUrl(lc.folder, lc.images[0])}
                             alt={lc.name}
                             className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-500"
                           />
@@ -176,9 +176,9 @@ const Gallery = () => {
                         onClick={() => setSelectedImage(getImageUrl(selectedLC.folder, imgName))}
                         className="aspect-video rounded-2xl overflow-hidden shadow-md cursor-pointer bg-gray-200"
                       >
-                        <img 
-                          src={getImageUrl(selectedLC.folder, imgName)} 
-                          alt={`${selectedLC.name} ${index + 1}`} 
+                        <img
+                          src={getImageUrl(selectedLC.folder, imgName)}
+                          alt={`${selectedLC.name} ${index + 1}`}
                           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                         />
                       </motion.div>
