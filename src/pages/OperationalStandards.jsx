@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart2, FileText, CheckSquare, AlertTriangle, TrendingUp, PieChart, Shield, Calendar, X } from 'lucide-react';
 
-const Operations = () => {
+const OperationalStandards = () => {
   const [activeTab, setActiveTab] = useState('standards');
   const [selectedStandard, setSelectedStandard] = useState(null);
 
@@ -643,4 +643,4 @@ const Operations = () => {
   );
 };
 
-export default Operations;
+export default OperationalStandards;

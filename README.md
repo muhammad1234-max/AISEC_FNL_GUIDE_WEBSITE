@@ -62,3 +62,6 @@ When you are done, go back to the terminal window and press **Ctrl + C** on your
 ---
 
 *Made with 💙 for AIESEC*
+
+## Made by: Muhammad Abbas
+## Email : muhammadabbas@aiesec.net
