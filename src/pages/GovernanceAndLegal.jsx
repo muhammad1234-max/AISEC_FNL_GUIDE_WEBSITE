@@ -155,15 +155,83 @@ const GovernanceAndLegal = () => {
     </div>
   );
 
+  const gfbContent = (
+    <div className="space-y-8">
+      {/* Header */}
+      <div className="border-b border-gray-200 pb-4">
+        <h3 className="text-3xl font-bold text-gray-900">Global Finance Board (GFB)</h3>
+        <p className="text-gray-600 mt-2">
+          The Global Finance Board (GFB) is AIESEC International’s highest financial governing body.
+          It ensures that all entities (MCs and LCs worldwide) operate under the same global financial standards, ethics, and compliance framework.
+        </p>
+      </div>
+
+      <div className="space-y-6">
+        {/* Global Financial Governance */}
+        <section className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h4 className="text-xl font-bold text-gray-800 mb-3 border-l-4 border-green-500 pl-3">Global Financial Governance</h4>
+          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+            <li>Sets and updates Global Accounting Standards (GAS) and Financial Policies for all AIESEC entities.</li>
+            <li>Ensures uniformity and compliance across all countries.</li>
+          </ul>
+        </section>
+
+        {/* Oversight of Entity Performance */}
+        <section className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h4 className="text-xl font-bold text-gray-800 mb-3 border-l-4 border-blue-500 pl-3">Oversight of Entity Performance</h4>
+          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+            <li>Monitors the financial health of Member Committees (MCs) globally.</li>
+            <li>Reviews financial reports and assesses risks within each national entity.</li>
+          </ul>
+        </section>
+
+        {/* Approval of National Financial Policies */}
+        <section className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h4 className="text-xl font-bold text-gray-800 mb-3 border-l-4 border-purple-500 pl-3">Approval of National Financial Policies</h4>
+          <p className="text-gray-600">
+            Reviews and ratifies national-level documents like National Compendiums, Financial Procedures, and Reserve Plans to ensure alignment with AIESEC International’s requirements.
+          </p>
+        </section>
+
+        {/* Support and Education */}
+        <section className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h4 className="text-xl font-bold text-gray-800 mb-3 border-l-4 border-yellow-500 pl-3">Support and Education</h4>
+          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+            <li>Provides guidance, training, and frameworks to help MCs and LCs implement sound financial management practices.</li>
+            <li>Shares best practices and tools for budgeting, accounting, and auditing.</li>
+          </ul>
+        </section>
+
+        {/* Global Risk Management */}
+        <section className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h4 className="text-xl font-bold text-gray-800 mb-3 border-l-4 border-red-500 pl-3">Global Risk Management</h4>
+          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+            <li>Identifies and manages international financial risks, such as debts between entities or compliance issues.</li>
+            <li>Ensures that global financial operations remain sustainable and transparent.</li>
+          </ul>
+        </section>
+
+        {/* Strategic Decision-Making */}
+        <section className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h4 className="text-xl font-bold text-gray-800 mb-3 border-l-4 border-indigo-500 pl-3">Strategic Decision-Making</h4>
+          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+            <li>Advises AIESEC International on financial sustainability strategies, global reserves, and long-term investment decisions.</li>
+            <li>Supports the creation of policies that help AIESEC remain stable and compliant across all countries.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  );
+
   return (
     <Layout>
       <div className="bg-white min-h-screen py-20 relative overflow-hidden">
         {/* Background shapes */}
         <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-blue-50/50 to-transparent pointer-events-none" />
 
-        {/* Modal for EFB Details */}
+        {/* Modal for EFB/GFB Details */}
         <AnimatePresence>
-          {selectedStandard === 'efb' && (
+          {selectedStandard && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -187,7 +255,7 @@ const GovernanceAndLegal = () => {
                   </button>
                 </div>
                 <div className="p-8 max-h-[80vh] overflow-y-auto custom-scrollbar">
-                  {efbContent}
+                  {selectedStandard === 'efb' ? efbContent : gfbContent}
                 </div>
               </motion.div>
             </motion.div>
@@ -276,7 +344,8 @@ const GovernanceAndLegal = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-800 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300"
+              onClick={() => setSelectedStandard('gfb')}
+              className="bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-800 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 cursor-pointer"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                 <Globe className="w-40 h-40 text-white" />
@@ -308,6 +377,13 @@ const GovernanceAndLegal = () => {
                     <span className="text-gray-200 font-medium">{item}</span>
                   </div>
                 ))}
+              </div>
+
+              <div className="mt-8 relative z-10 flex justify-center">
+                <span className="inline-flex items-center px-6 py-3 rounded-xl bg-green-600 hover:bg-green-500 text-white font-bold transition-colors shadow-lg shadow-green-900/20">
+                  <Globe className="w-5 h-5 mr-2" />
+                  View GFB Details
+                </span>
               </div>
             </motion.div>
           </div>

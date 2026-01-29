@@ -61,73 +61,135 @@ const OperationalStandards = () => {
         </div>
       </div>
     ),
-    'Money Management': (
+    'Budgeting': (
       <div className="space-y-6">
-        <h4 className="text-xl font-bold text-gray-800">Money Management in AIESEC</h4>
-        <p className="text-gray-600 italic">To better understand financial literacy, we can look at five key concepts.</p>
-
+        <h4 className="text-xl font-bold text-gray-800">Budgeting Standards</h4>
         <div>
-          <h5 className="font-bold text-green-600 mb-2">5 Key Concepts</h5>
-          <ul className="list-none space-y-2 text-gray-600">
-            <li className="flex items-center"><span className="bg-green-100 text-green-700 font-bold px-2 py-1 rounded mr-3 text-sm">01</span> <strong>Budgeting</strong></li>
-            <li className="flex items-center"><span className="bg-red-100 text-red-700 font-bold px-2 py-1 rounded mr-3 text-sm">02</span> <strong>Saving</strong></li>
-            <li className="flex items-center"><span className="bg-yellow-100 text-yellow-700 font-bold px-2 py-1 rounded mr-3 text-sm">03</span> <strong>Investing</strong></li>
-            <li className="flex items-center"><span className="bg-red-100 text-red-700 font-bold px-2 py-1 rounded mr-3 text-sm">04</span> <strong>Borrowing</strong></li>
-            <li className="flex items-center"><span className="bg-green-100 text-green-700 font-bold px-2 py-1 rounded mr-3 text-sm">05</span> <strong>Planning for the Future</strong></li>
+          <h5 className="font-bold text-green-600 mb-2">Budgets</h5>
+          <p className="text-gray-600 mb-2">
+            A budget is a financial plan that estimates expected income and expenses for a specific period. Each portfolio or project in AIESEC (like iGV, Marketing, or BD) creates a budget before starting activities. It helps plan how much money will be earned (revenues) and spent (costs) — ensuring responsible use of funds and financial sustainability.
+          </p>
+        </div>
+        <div>
+          <h5 className="font-bold text-green-600 mb-2">Budget Ratification</h5>
+          <p className="text-gray-600 mb-2">
+            Budget ratification means the formal approval of a budget by the Local Committee Executive Board or the MC before implementation. After the VP FnL prepares a budget for a term or project, it is shared with the EB for feedback and approval (ratification). Only after ratification can the budget be used officially — ensuring transparency and accountability.
+          </p>
+        </div>
+        <div>
+          <h5 className="font-bold text-green-600 mb-2">Budget Variance</h5>
+          <p className="text-gray-600 mb-2">
+            Budget variance is the difference between the planned (budgeted) amount and the actual amount spent or earned. If a project planned Rs. 50,000 for marketing but spent Rs. 60,000, the variance is Rs. 10,000 (unfavorable). Variance analysis helps FnL and the EB understand why differences happened — for example, unexpected costs or savings — and make better decisions in the future.
+          </p>
+        </div>
+      </div>
+    ),
+    'Analysis': (
+      <div className="space-y-6">
+        <h4 className="text-xl font-bold text-gray-800">Financial Analysis Framework</h4>
+        <div>
+          <h5 className="font-bold text-blue-600 mb-2">Ratios</h5>
+          <p className="text-gray-600 mb-2">
+            Ratios are numerical comparisons that show the relationship between two financial figures. They help measure the LC’s performance — like profitability, liquidity, and stability. For example, comparing income to expenses or assets to liabilities gives a quick view of how financially healthy the LC is.
+          </p>
+        </div>
+        <div>
+          <h5 className="font-bold text-blue-600 mb-2">Financial Ratios</h5>
+          <p className="text-gray-600 mb-2">
+            Financial ratios are specific calculations used to analyze an organization’s financial results, efficiency, and strength. FnL uses these ratios to evaluate how well the LC is managing its funds, budgeting, and performance — helping EBs make better financial decisions and plan improvements.
+          </p>
+        </div>
+        <div>
+          <h5 className="font-bold text-blue-600 mb-2">Gross Profit Margin</h5>
+          <p className="text-gray-600 mb-2">
+            The Gross Profit Margin shows how much profit AIESEC makes after covering direct costs of a project or exchange.
+          </p>
+          <div className="bg-blue-50 p-3 rounded-lg text-center font-mono text-blue-800 my-2 text-sm">
+            Gross Profit Margin = (Revenue − Direct Costs) / Revenue × 100
+          </div>
+          <p className="text-gray-600">
+            If AIESEC earned Rs. 100,000 from an exchange and spent Rs. 60,000 to run it, the margin is 40% — meaning 40% of revenue remained after basic costs.
+          </p>
+        </div>
+        <div>
+          <h5 className="font-bold text-blue-600 mb-2">Net Profit Margin</h5>
+          <p className="text-gray-600 mb-2">
+            The Net Profit Margin shows how much of the total revenue is left after all expenses (including admin, marketing, and operations).
+          </p>
+          <div className="bg-blue-50 p-3 rounded-lg text-center font-mono text-blue-800 my-2 text-sm">
+            Net Profit Margin = (Net Profit / Revenue) × 100
+          </div>
+          <p className="text-gray-600">
+            It helps measure the LC’s overall financial efficiency — showing whether the entity is managing its total costs effectively.
+          </p>
+        </div>
+        <div>
+          <h5 className="font-bold text-blue-600 mb-2">Contribution Margin</h5>
+          <p className="text-gray-600 mb-2">
+            The Contribution Margin shows how much revenue is left after variable costs — money that “contributes” to covering fixed costs and profits.
+          </p>
+          <div className="bg-blue-50 p-3 rounded-lg text-center font-mono text-blue-800 my-2 text-sm">
+            Contribution Margin = Revenue − Variable Costs
+          </div>
+          <p className="text-gray-600">
+            It helps FnL analyze if a project or exchange is financially sustainable and how much it contributes to the LC’s fixed costs (like office rent or conference fees).
+          </p>
+        </div>
+        <div>
+          <h5 className="font-bold text-blue-600 mb-2">moCR</h5>
+          <p className="text-gray-600 mb-2">
+            moCR (Months of Cash Remaining) measures how long AIESEC can continue operating with the cash currently available.
+          </p>
+          <div className="bg-blue-50 p-3 rounded-lg text-center font-mono text-blue-800 my-2 text-sm">
+            moCR = Average Available Cash / Monthly Expenses
+          </div>
+          <p className="text-gray-600">
+            If the LC has Rs. 300,000 and spends Rs. 100,000 monthly, the moCR is 3 months — meaning AIESEC can operate for three months without new income. A healthy moCR ensures financial stability and continuity.
+          </p>
+        </div>
+        <div>
+          <h5 className="font-bold text-blue-600 mb-2">Liquidity Ratio</h5>
+          <p className="text-gray-600 mb-2">
+            The Liquidity Ratio shows how easily AIESEC can pay its short-term debts with its current assets.
+          </p>
+          <div className="bg-blue-50 p-3 rounded-lg text-center font-mono text-blue-800 my-2 text-sm">
+            Liquidity Ratio = Current Assets / Current Liabilities
+          </div>
+          <p className="text-gray-600">
+            If the ratio is above 1, AIESEC has enough resources to pay off its immediate obligations (like reimbursements or pending payments).
+          </p>
+        </div>
+        <div>
+          <h5 className="font-bold text-blue-600 mb-2">Debt Ratio</h5>
+          <p className="text-gray-600 mb-2">
+            The Debt Ratio measures how much of AIESEC’s assets are financed by liabilities or borrowed funds.
+          </p>
+          <div className="bg-blue-50 p-3 rounded-lg text-center font-mono text-blue-800 my-2 text-sm">
+            Debt Ratio = Total Liabilities / Total Assets
+          </div>
+          <p className="text-gray-600">
+            A higher debt ratio means more of the LC’s assets are funded through payables or debts — which can indicate financial risk if not managed properly.
+          </p>
+        </div>
+        <div>
+          <h5 className="font-bold text-blue-600 mb-2">Financial Analysis Framework</h5>
+          <p className="text-gray-600 mb-2">
+            A Financial Analysis Framework is a structured approach to evaluate an organization’s financial data and performance. FnL uses frameworks to:
+          </p>
+          <ul className="list-disc pl-5 space-y-1 text-gray-600 mb-2">
+            <li>Review income, expenses, and budgets</li>
+            <li>Analyze ratios and variances</li>
+            <li>Identify risks, trends, and improvement areas</li>
           </ul>
+          <p className="text-gray-600">
+            This helps the EB make data-based decisions and maintain financial sustainability.
+          </p>
         </div>
-
         <div>
-          <h5 className="font-bold text-green-600 mb-2">Setting Financial Goals (SMART)</h5>
-          <p className="text-gray-600 mb-3 text-sm">Goals create accountability and motivation. Once you assess your current financial situation, you can write a SMART goal to achieve your ambitions.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-            <div className="p-3 bg-green-50 border border-green-100 rounded-lg">
-              <strong className="block text-green-700 mb-1">Specific</strong>
-              <span className="text-gray-600">What exactly are you trying to achieve?</span>
-            </div>
-            <div className="p-3 bg-yellow-50 border border-yellow-100 rounded-lg">
-              <strong className="block text-yellow-700 mb-1">Measurable</strong>
-              <span className="text-gray-600">How will you know when you’ve achieved your goal?</span>
-            </div>
-            <div className="p-3 bg-red-50 border border-red-100 rounded-lg">
-              <strong className="block text-red-700 mb-1">Attainable</strong>
-              <span className="text-gray-600">Is this goal realistically achievable?</span>
-            </div>
-            <div className="p-3 bg-yellow-50 border border-yellow-100 rounded-lg">
-              <strong className="block text-yellow-700 mb-1">Relevant</strong>
-              <span className="text-gray-600">How is this goal helpful to you?</span>
-            </div>
-            <div className="p-3 bg-green-50 border border-green-100 rounded-lg sm:col-span-2">
-              <strong className="block text-green-700 mb-1">Timely</strong>
-              <span className="text-gray-600">When will you achieve this goal?</span>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h5 className="font-bold text-green-600 mb-2">Benefits of Financial Literacy</h5>
-          <div className="space-y-3">
-            <div className="flex items-start">
-              <div className="bg-green-500 text-white font-bold text-xs px-2 py-1 rounded mt-1 min-w-[140px] text-center mr-3">Financial Empowerment</div>
-              <p className="text-sm text-gray-600">Financial knowledge and tools allow you to be in charge of your financial situation and make informed decisions. These skills help create disciplined spending habits.</p>
-            </div>
-            <div className="flex items-start">
-              <div className="bg-red-500 text-white font-bold text-xs px-2 py-1 rounded mt-1 min-w-[140px] text-center mr-3">Security</div>
-              <p className="text-sm text-gray-600">Responsible budgeting and saving can give you the confidence to face unexpected financial expenses.</p>
-            </div>
-            <div className="flex items-start">
-              <div className="bg-yellow-500 text-white font-bold text-xs px-2 py-1 rounded mt-1 min-w-[140px] text-center mr-3">Goal Achievement</div>
-              <p className="text-sm text-gray-600">Short-term and long-term goals are great ways to take steps towards achieving your financial ambitions.</p>
-            </div>
-            <div className="flex items-start">
-              <div className="bg-red-500 text-white font-bold text-xs px-2 py-1 rounded mt-1 min-w-[140px] text-center mr-3">Stress Reduction</div>
-              <p className="text-sm text-gray-600">Money can be a cause of anxiety and stress. Having financial skills helps ease that stress and gives you confidence in your decisions.</p>
-            </div>
-            <div className="flex items-start">
-              <div className="bg-green-500 text-white font-bold text-xs px-2 py-1 rounded mt-1 min-w-[140px] text-center mr-3">Wealth Accumulation</div>
-              <p className="text-sm text-gray-600">Saving and investing allows you to have a more financially secure future and can lead to early retirement.</p>
-            </div>
-          </div>
+          <h5 className="font-bold text-blue-600 mb-2">Forecasting</h5>
+          <p className="text-gray-600 mb-2">
+            Forecasting is predicting future financial outcomes based on past trends and current data. FnL forecasts expected income (like exchange revenues or sponsorships) and expenses (like conference costs). It helps prepare realistic budgets, prevent deficits, and align the LC’s plans with achievable financial goals.
+          </p>
         </div>
       </div>
     ),
@@ -244,7 +306,7 @@ const OperationalStandards = () => {
         </div>
       </div>
     ),
-    'Risk Mgmt': (
+    'Risk Management': (
       <div className="space-y-4">
         <h4 className="text-xl font-bold text-gray-800">Risk Management</h4>
         <p className="text-gray-600 italic">Risk management within AIESEC ensures that all financial and legal decisions are backed by proactive thinking, contingency planning, and compliance awareness. It’s not just about avoiding problems — it’s about being prepared for them.</p>
@@ -451,18 +513,19 @@ const OperationalStandards = () => {
                 <div className="space-y-8 relative z-10">
                   <div className="text-center mb-10">
                     <h2 className="text-3xl font-bold text-gray-900">FnL Operational Standards</h2>
-                    <p className="text-gray-500 mt-2">The 7 pillars of financial operations</p>
+                    <p className="text-gray-500 mt-2">The 8 pillars of financial operations</p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {[
                       { title: 'Accounting', desc: 'Recording & summarizing transactions.', icon: FileText, color: 'text-blue-500', bg: 'bg-blue-50' },
-                      { title: 'Money Management', desc: 'Planning money usage for the term.', icon: PieChart, color: 'text-green-500', bg: 'bg-green-50' },
+                      { title: 'Budgeting', desc: 'Planning & approving financial plans.', icon: PieChart, color: 'text-green-500', bg: 'bg-green-50' },
                       { title: 'Reporting', desc: 'Presenting financial activities.', icon: BarChart2, color: 'text-purple-500', bg: 'bg-purple-50' },
                       { title: 'Investing', desc: 'Creating future value.', icon: TrendingUp, color: 'text-indigo-500', bg: 'bg-indigo-50' },
                       { title: 'Auditing', desc: 'Verifying financial records.', icon: CheckSquare, color: 'text-teal-500', bg: 'bg-teal-50' },
-                      { title: 'Risk Mgmt', desc: 'Managing uncertainties & risks.', icon: AlertTriangle, color: 'text-red-500', bg: 'bg-red-50' },
+                      { title: 'Risk Management', desc: 'Managing uncertainties & risks.', icon: AlertTriangle, color: 'text-red-500', bg: 'bg-red-50' },
                       { title: 'Legalities', desc: 'Ensuring legal compliance.', icon: Shield, color: 'text-gray-500', bg: 'bg-gray-50' },
+                      { title: 'Analysis', desc: 'Evaluating financial performance.', icon: PieChart, color: 'text-blue-500', bg: 'bg-blue-50' },
                     ].map((item, idx) => (
                       <motion.div
                         key={idx}

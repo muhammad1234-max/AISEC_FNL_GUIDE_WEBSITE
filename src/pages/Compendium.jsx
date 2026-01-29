@@ -92,15 +92,22 @@ const Compendium = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative group cursor-pointer"
+              onClick={() => window.open('/National Compendium - AIESEC in Pakistan (2).pdf', '_blank')}
             >
-              <div className="absolute inset-0 bg-gradient-brand rounded-3xl transform rotate-3 opacity-20 blur-xl" />
-              <div className="relative bg-white rounded-3xl p-2 shadow-2xl border border-gray-100">
-                <img
-                  src="https://placehold.co/800x600/1e293b/ffffff?text=National+Compendium"
-                  alt="Compendium Preview"
-                  className="w-full h-auto rounded-2xl"
-                />
+              <div className="absolute inset-0 bg-gradient-brand rounded-3xl transform rotate-3 opacity-20 blur-xl group-hover:opacity-30 transition-opacity" />
+              <div className="relative bg-white rounded-3xl p-2 shadow-2xl border border-gray-100 overflow-hidden">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
+                  <img
+                    src="/compendium_cover_picture.png"
+                    alt="National Compendium Cover"
+                    className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
+                    <span className="text-white/80 text-sm font-bold uppercase tracking-wider mb-2">Click to View</span>
+                    <h3 className="text-white text-2xl font-bold">National Compendium</h3>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
