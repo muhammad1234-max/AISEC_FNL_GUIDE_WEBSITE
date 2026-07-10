@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-[#fafafa] selection:bg-aiesec-blue/20">
       <Navbar />
       <motion.main
         initial={{ opacity: 0, y: 20 }}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PageHeader from '../components/PageHeader';
 import Layout from '../components/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowLeft, Folder } from 'lucide-react';
@@ -42,13 +43,13 @@ const lcData = [
   }
 ];
 
+const getImageUrl = (folder, image) => {
+  return `/Wajahat lakhani/${folder}/${image}`;
+};
+
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedLC, setSelectedLC] = useState(null);
-
-  const getImageUrl = (folder, image) => {
-    return `/Wajahat lakhani/${folder}/${image}`;
-  };
 
   return (
     <Layout>
@@ -60,7 +61,7 @@ const Gallery = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+              className="fixed inset-0 z-50 flex-center bg-black/90 backdrop-blur-sm p-4"
               onClick={() => setSelectedImage(null)}
             >
               <button
@@ -82,24 +83,11 @@ const Gallery = () => {
           )}
         </AnimatePresence>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-5xl font-extrabold text-gray-900 mb-4"
-            >
-              Gallery
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-gray-600 max-w-2xl mx-auto"
-            >
-              Visual highlights and key moments from our Local Committees.
-            </motion.p>
-          </div>
+        <div className="page-container">
+          <PageHeader
+            title="Gallery"
+            description="Visual highlights and key moments from our Local Committees."
+          />
 
           <AnimatePresence mode="wait">
             {!selectedLC ? (
@@ -111,14 +99,14 @@ const Gallery = () => {
                 exit={{ opacity: 0, x: -20 }}
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
               >
-                {lcData.map((lc, index) => (
+                {lcData.map((lc) => (
                   <motion.div
                     key={lc.id}
                     whileHover={{ y: -8, transition: { duration: 0.3 } }}
                     onClick={() => setSelectedLC(lc)}
                     className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all cursor-pointer overflow-hidden border border-gray-100"
                   >
-                    <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 relative flex items-center justify-center overflow-hidden">
+                    <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 relative flex-center overflow-hidden">
                       {lc.images.length > 0 ? (
                         <>
                           <img

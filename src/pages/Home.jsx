@@ -13,9 +13,9 @@ const Home = () => {
         <div className="absolute inset-0 z-0">
           <motion.img
             src="/bg1.jpg"
-            initial={{ opacity: 0, scale: 1.1 }}
+            initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
             className="absolute inset-0 w-full h-full object-cover"
             alt="Hero Background"
           />
@@ -24,49 +24,49 @@ const Home = () => {
           <div className="absolute inset-0 bg-black/20" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
+        <div className="page-container py-24 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
               className="inline-block mb-6 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white font-medium text-sm"
             >
               Finance & Legal Guide 2026
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight"
+              transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
+              className="text-5xl md:text-6xl font-bold text-white tracking-tight mb-8 leading-[1.1]"
             >
               Mastering the <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-100">
+              <span className="text-blue-400">
                 Art of Finance
               </span>
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="text-xl md:text-2xl text-blue-50 max-w-2xl mx-auto mb-12 leading-relaxed"
+              transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
+              className="text-lg md:text-xl text-blue-50/80 max-w-2xl mx-auto mb-12 leading-relaxed"
             >
               Your comprehensive guide to navigating the financial and legal landscape of AIESEC with confidence and clarity.
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
+              transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 1, 0.5, 1] }}
               className="flex flex-col sm:flex-row justify-center gap-4"
             >
-              <Link to="/fundamentals" className="group bg-white text-aiesec-blue px-8 py-4 rounded-full font-bold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
+              <Link to="/fundamentals" className="group bg-white text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 active:scale-95 transition-all duration-200 flex-center shadow-sm">
                 Start Learning
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/tools" className="px-8 py-4 rounded-full font-bold text-white border-2 border-white/30 hover:bg-white/10 transition-colors backdrop-blur-sm">
+              <Link to="/tools" className="px-8 py-4 rounded-full font-bold text-white border-2 border-white/30 hover:bg-white/10 transition-colors duration-200 backdrop-blur-sm">
                 Explore Tools
               </Link>
             </motion.div>
@@ -76,7 +76,7 @@ const Home = () => {
 
       {/* The Equation Section */}
       <section className="py-24 bg-slate-50 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="page-container">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-extrabold text-gray-900 mb-4">The FnL Equation</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">Understanding the four pillars that drive our organizational sustainability.</p>
@@ -91,17 +91,17 @@ const Home = () => {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-3xl p-8 border border-gray-100 card-hover group cursor-default"
+                initial={{ opacity: 0, scale: 0.96 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, delay: index * 0.05, ease: [0.25, 1, 0.5, 1] }}
+                className="panel-featured card-hover group cursor-default"
               >
-                <div className={`${item.color} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white shadow-lg ${item.shadow} group-hover:scale-110 transition-transform duration-300`}>
-                  <item.icon className="w-8 h-8" />
+                <div className={`${item.color} w-12 h-12 rounded-xl flex-center mb-6 text-white shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                  <item.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600 font-medium">{item.desc}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 tracking-tight">{item.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -110,7 +110,7 @@ const Home = () => {
 
       {/* Quick Access Grid */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="page-container">
           <div className="flex justify-between items-end mb-12">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-2">Explore the Guide</h2>

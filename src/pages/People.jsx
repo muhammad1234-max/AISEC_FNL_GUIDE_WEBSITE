@@ -1,4 +1,5 @@
 import React from 'react';
+import PageHeader from '../components/PageHeader';
 import Layout from '../components/Layout';
 import { motion } from 'framer-motion';
 
@@ -6,24 +7,11 @@ const People = () => {
   return (
     <Layout>
       <section className="bg-white min-h-screen py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-5xl font-extrabold text-gray-900 mb-4"
-            >
-              People
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-gray-600 max-w-2xl mx-auto"
-            >
-              The leaders, teams, and stakeholders behind Finance and Legal excellence.
-            </motion.p>
-          </div>
+        <div className="page-container">
+          <PageHeader
+            title="People"
+            description="The leaders, teams, and stakeholders behind Finance and Legal excellence."
+          />
           <div className="max-w-3xl mx-auto space-y-6">
             <motion.div
               initial={{ opacity: 0, y: 10 }}

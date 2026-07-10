@@ -1,4 +1,5 @@
 import React from 'react';
+import PageHeader from '../components/PageHeader';
 import Layout from '../components/Layout';
 import { motion } from 'framer-motion';
 import { Globe, FileText, CheckCircle, Server, Cloud } from 'lucide-react';
@@ -7,24 +8,12 @@ const Tools = () => {
   return (
     <Layout>
       <div className="bg-slate-50 min-h-screen py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <motion.h1
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-5xl font-extrabold text-gray-900 mb-4"
-            >
-              Financial <span className="text-gradient-brand">Tools</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="mt-4 text-xl text-gray-600 max-w-2xl mx-auto"
-            >
-              The digital platforms that power AIESEC's financial management, reporting, and transparency.
-            </motion.p>
-          </div>
+        <div className="page-container">
+          <PageHeader
+            title="Financial"
+            highlight="Tools"
+            description="The digital platforms that power AIESEC's financial management, reporting, and transparency."
+          />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Odoo Section */}
